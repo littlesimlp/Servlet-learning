@@ -1,4 +1,0 @@
-public List<Emp> findAll() {
-	List<Emp> emps = new ArrayList<Emp>();//最后返回的对象
-	
-}
