@@ -1,0 +1,98 @@
+复习
+完成了修改功能的后半部分
+分页查询
+分页查询当中的 重要条件信息
+当前页信息                     currentPage
+每页最大信息记录条数    pageSize
+每页起始位置                  (currentPage-1)*pageSize
+总记录条数                     rows
+上一页          当前页-1得到
+下一页          当前页+1得到
+总页数       rows%PageSize 取余    
+                 如果由余数 总页数=rows/PageSize+1
+                 如果没有余数 总页数=rows/PageSize
+Servlet合并
+Servlet请求方式
+精确匹配  /a
+通配匹配  /*
+后缀匹配  *.do
+
+登录功能
+具体步骤 可以参考 增删改查  
+什么是状态管理
+浏览器与服务器之间的多次交互当作一个整体来看待，即将多次操作所涉及的数据记录下来
+http 超文本传输协议
+
+怎样进行状态管理呢
+第一种  cookie(在客户端管理用户状态)
+第二种  session(在服务器端管理用户状态)
+
+cookie
+浏览器在访问服务器时，服务器将一些数据以set-cookie消息头的形式发送给浏览器，浏览器会将这些数据保存起来，当浏览器再次访问服务时，会将这些数据以cookie消息头形式发送给服务器 通过这种方式 可以管理用户的状态
+
+cookie的操作
+创建cookie
+Cookie cookie=newCookie(String name,String value)
+查询cookie
+如果查询时没有cookie会  返回null
+Cookie[]cookies=reqeust.getCookies();
+String name=cookie.getName();
+String value=cookie.getValue();
+cookie只能保存ASCII 如果需要保存中文，需要经中文转换成ASCII 字符形式
+cookie的保存时长
+cookie.setMaxAge(int seconds)
+seconds>0 浏览器会将cookie以文件的形式保存在硬盘上 超过指定时间以后 会删除该文件
+seconds<0 默认值 浏览器会将cookie保存在内存当中 只有浏览器关闭之后 才会删除
+seconds=0
+立即删除该cookie
+//主动删除cookie
+比如 要删除一个name为username的cookie
+Cookie c=new Cookie("username","")
+c.setMaxAge(0)
+cookie的路径问题
+浏览器在向服务器上的某个地址发送请求时
+会先比较cookie的路径与向访问的路径是否匹配，只有匹配才会发送cookie
+cookie的限制
+cookie 可以禁止
+cookie 大小有限制  4k左右
+cookie的数量也有限制 浏览器大约能保存300个
+cookie的值只能是字符串，要考虑编码问题
+cookie不安全
+
+
+session 
+浏览器在访问服务器时，服务器会创建一个session都对象(该对象有一个唯一的id 一般被称为SessionId 服务器在默认情况下 会将sessionId以cookie机制发送给浏览器 当浏览器再次访问服务器时 会将sessionId发送给服务器，服务器依据seesionId就可以找到对应的session对象通过这种方式，就课可以管理用户的状态)
+
+session的使用
+session的创建 是由容器(tocmat服务器创建)
+session 的获取方式一
+HttpSession session=request.getSession(布尔类型)
+
+如果参数为true  服务器会先查看请求包中是否有sessionId如果没有则创建一个session对象，如果有则依据sessionId去查找出对应的session对象，如果找到则返回该对象，如果找不到 则创建一个新的session对象返回
+
+如果参数为false 服务器会先查看请求包中是否有sessionId 如果没有返回null,如果有依据sessionId查询对应的session对象返回，如果没有找到则返回null
+
+session 的获取方式二
+HttpSession session=reqeust.getSession();
+与request.getSession(true)等价
+
+session特性
+session超时
+服务器会将超过指定时间的session对象删除（在指定时间内，该session对象没有使用过）
+如何设定session的存在时长
+一 
+    session.setMaxInactiveInterval(int seconds)
+二
+  tomcat文件下的conf文件  中web.xml
+  session-config
+Session验证 可以防止非用户通过地址栏输入地址直接访问受保护的页面
+
+验证码
+
+
+
+
+
+                 
+
+
