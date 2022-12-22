@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<!--   <filter>
+  	<filter-name>s</filter-name>
+  	<filter-class>com.qf.filter.SessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>s</filter-name>
+  	<url-pattern>/*</url-pattern> 
+  </filter-mapping> -->
+  
+  
+  <servlet>
+    <servlet-name>emp</servlet-name>
+    <servlet-class>com.qf.servlet.EmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>emp</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addCookie</servlet-name>
+    <servlet-class>com.qf.cookie.AddCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addCookie</servlet-name>
+    <url-pattern>/addCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>findCookie</servlet-name>
+    <servlet-class>com.qf.cookie.FindCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findCookie</servlet-name>
+    <url-pattern>/findCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>count</servlet-name>
+    <servlet-class>com.qf.session.CountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>count</servlet-name>
+    <url-pattern>/count</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>checkCode</servlet-name>
+    <servlet-class>com.qf.servlet.CheckcodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkCode</servlet-name>
+    <url-pattern>/checkCode.do</url-pattern>
+  </servlet-mapping>
+</web-app>

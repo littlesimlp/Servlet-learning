@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="java_eg3:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/java_eg3_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="java_eg3/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="java_eg3" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

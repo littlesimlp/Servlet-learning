@@ -1,0 +1,89 @@
+/* 登录页面的专用的样式文件 */
+
+/* 给整个页面加上背景 */
+html, body{
+    height: 100%;
+}
+body {
+    background-image: url(../image/login.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.login-container {
+    width: 100%;
+    height: calc(100% - 50px);
+
+    /* 需要让里面的子元素,垂直水平居中,需要用到 flex 布局 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog {
+    width: 400px;
+    height: 380px;
+    background-color: rgba(252,218,193,0.5);
+    border-radius: 10px;
+}
+
+.login-dialog h3 {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.login-dialog .row {
+    height: 50px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog .row span {
+    /* 把span转为块级元素,方便后面设计尺寸 */
+    display: block;
+    width: 100px;
+    font-weight: 700;
+}
+
+#username, #password {
+    width: 200px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-radius: 10px;
+
+    border: none;
+
+    outline: none;
+}
+#ck {
+    width: 85px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-radius: 10px;
+
+    border: none;
+
+    outline: none;
+}
+.row #submit {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    color:whitesmoke;
+    background-color: #2C455B;
+    border: none;
+    outline: none;
+
+    margin-top: 50px;
+}
+
+.row #submit:active {
+    background-color: #666;
+}

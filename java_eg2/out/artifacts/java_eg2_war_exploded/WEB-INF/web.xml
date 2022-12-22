@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  	<filter>
+		<filter-name>f1</filter-name>
+		<filter-class>com.qf.servlet.MsgFilter</filter-class>
+		<init-param>
+			<param-name>str</param-name>
+			<param-value>cat</param-value>
+		</init-param>
+
+	</filter>
+	<filter-mapping>
+		<filter-name>f1</filter-name>
+		<url-pattern>/a</url-pattern>
+	</filter-mapping>
+
+
+	<filter>
+		<filter-name>f2</filter-name>
+		<filter-class>com.qf.servlet.LengthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>f2</filter-name>
+		<url-pattern>/a</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+  		<servlet-name>cart</servlet-name>
+  		<servlet-class>com.qf.servlet.ActionServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>cart</servlet-name>
+  		<url-pattern>*.do</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>msg</servlet-name>
+		<servlet-class>com.qf.servlet.MsgServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>msg</servlet-name>
+		<url-pattern>/a</url-pattern>
+	</servlet-mapping>
+</web-app>

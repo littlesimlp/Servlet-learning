@@ -1,0 +1,62 @@
+
+/* 给整个页面加上背景 */
+html, body{
+    height: 100%;
+}
+body {
+    background-image: url(../image/list.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.blog {
+    width: 100%;
+    /* 高度如果不设置, 就取决于里面的内容高度的综合 */
+    padding: 20px;
+}
+
+.blog .title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.blog .date {
+    text-align: center;
+    color: rgb(0,128,0);
+    padding: 10px;
+}
+
+.blog .desc {
+    text-indent: 2em;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+}
+
+.blog #a1 {
+    display: block;
+    width: 140px;
+    height: 40px;
+    margin: 10px auto;
+    border: 2px black solid;
+
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+
+    /* 如果想让变化变的柔和一些, 可以加上过渡效果 */
+    transition: all 0.5s;
+}
+
+.blog #a1:hover {
+    background: black;
+    color: rgb(0, 128, 0);
+}
+
+#a2 {
+    color: red;
+    padding-left: 600px;
+}
